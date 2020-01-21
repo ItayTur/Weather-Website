@@ -11,6 +11,7 @@ const partialsPath = path.join(__dirname, '../templates/partials');
 hbs.registerPartials(partialsPath);
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Sets hbs view engine and views path
 app.set('view engine', 'hbs');
@@ -82,6 +83,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('server up and running on port 3000')
+app.listen(port, () => {
+    console.log('server up and running on port ' + port)
 })
